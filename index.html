@@ -513,8 +513,9 @@
       History
     </button>
   </nav>
+  
 
-  <script>
+ <script>
     // --- DATABASE / LOCALSTORAGE ---
     let members = JSON.parse(localStorage.getItem('subac_members')) || [];
     let history = JSON.parse(localStorage.getItem('subac_history')) || [];
@@ -955,6 +956,19 @@
           .catch((err) => console.log('Service Worker Registration Failed.', err));
       });
     }
-  </script>
+  </script> 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  // 2. Ku xiridda Supabase-kaaga iyadoo la isticmaalayo furayaashaada rasmiga ah
+  const supabaseUrl = 'https://hagcxsirwgsheegmcyaf.supabase.co';
+  const supabaseKey = 'sb_publishable_sGdVfhd_IiAdoOCgZKBF-Q_3EZiv1_e';
+  
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+  // Hubinta inuu xiriirku u shaqeeyo si sax ah
+  console.log("Supabase si guul leh ayaa loogu xiray app-kaaga!");
+</script>
+  
 </body>
 </html>
